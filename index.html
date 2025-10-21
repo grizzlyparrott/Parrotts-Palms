@@ -2,198 +2,242 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Parrott's Palm and Tree Services L.L.C. - Professional palm trimming, tree care, and yard maintenance in Mohave Valley, AZ.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Parrott's Palm and Tree Services L.L.C.</title>
-
+  <meta name="description" content="Professional palm trimming, tree care, and yard cleanups in Fort Mohave, Mohave Valley, and Bullhead City, AZ. Fast, safe, and reliable.">
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    /* Reset */
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body { font-family: Arial, Helvetica, sans-serif; color: #222; background: #f7f6f2; line-height: 1.6; }
 
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background-color: #f7f6f2;
-      color: #222;
-      line-height: 1.6;
-    }
+    /* Layout */
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 16px; }
 
-    header {
-      background: #2b4d30;
-      color: #fff;
+    /* Header / Hero */
+    header { background: #2b4d30; color: #fff; }
+    .topbar { display: flex; align-items: center; justify-content: space-between; padding: 12px 16px; }
+    .brand { font-weight: bold; }
+    nav a { color: #fff; text-decoration: none; margin-left: 16px; font-size: 0.95rem; }
+    nav a:hover { text-decoration: underline; }
+    .hero {
+      background: url("https://images.unsplash.com/photo-1520226112344-68dca1e2fb0d?q=80&w=1600&auto=format&fit=crop") center/cover no-repeat;
+      padding: 64px 0;
       text-align: center;
-      padding: 2rem 1rem;
     }
-
-    header h1 {
-      font-size: 2rem;
-      letter-spacing: 1px;
+    .hero .panel {
+      background: rgba(0,0,0,0.55);
+      color: #fff;
+      padding: 20px 16px;
+      border-radius: 8px;
+      display: inline-block;
+      max-width: 720px;
     }
-
-    header p {
-      font-style: italic;
-      margin-top: 0.5rem;
-    }
-
-    nav {
+    .hero h1 { margin: 0 0 8px; font-size: 1.9rem; }
+    .hero p { margin: 0 0 16px; }
+    .btn {
+      display: inline-block;
       background: #3c633f;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    nav a {
       color: #fff;
       text-decoration: none;
-      padding: 1rem 1.5rem;
-      display: block;
-      transition: background 0.3s ease;
+      padding: 10px 18px;
+      border-radius: 6px;
+      font-weight: bold;
     }
+    .btn:hover { background: #49734a; }
 
-    nav a:hover {
-      background: #49734a;
-    }
-
-    main {
-      max-width: 1000px;
-      margin: 2rem auto;
-      padding: 0 1rem;
-    }
-
-    section {
-      margin-bottom: 3rem;
-    }
-
+    /* Sections */
+    section { padding: 40px 0; }
     h2 {
       color: #2b4d30;
       border-left: 5px solid #2b4d30;
       padding-left: 10px;
-      margin-bottom: 1rem;
+      margin: 0 0 16px;
+      font-size: 1.5rem;
     }
+    .lead { margin-bottom: 18px; }
 
+    /* Services grid */
     .services {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
     }
-
-    .service {
+    .card {
       background: #fff;
-      padding: 1rem;
       border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
     }
+    .card img { width: 100%; height: 170px; object-fit: cover; display: block; }
+    .card .pad { padding: 14px; }
+    .card h3 { margin: 0 0 8px; color: #2b4d30; }
+    .card ul { margin: 8px 0 0 18px; }
 
-    .service h3 {
-      color: #2b4d30;
-      margin-bottom: 0.5rem;
+    /* Before/After */
+    .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; }
+    .figure { background: #fff; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.08); overflow: hidden; }
+    .figure img { width: 100%; height: 260px; object-fit: cover; display: block; }
+    .figure figcaption { padding: 10px 12px; font-size: 0.95rem; color: #333; }
+
+    /* Contact block */
+    .contact { background: #fff; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.08); padding: 16px; }
+    .contact p { margin: 8px 0; }
+    .cta-row { margin-top: 14px; display: flex; gap: 12px; flex-wrap: wrap; }
+
+    /* Footer bar fixed */
+    .footbar {
+      position: fixed; left: 0; right: 0; bottom: 0;
+      background: #2b4d30; color: #fff; padding: 10px 12px;
+      display: flex; justify-content: center; gap: 16px; z-index: 50;
     }
+    .footbar a { color: #fff; text-decoration: none; font-weight: bold; }
+    .footbar a:hover { text-decoration: underline; }
 
-    footer {
-      background: #2b4d30;
-      color: #fff;
-      text-align: center;
-      padding: 1.5rem 1rem;
-      font-size: 0.9rem;
-    }
-
-    .contact {
-      background: #fff;
-      padding: 1rem;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-
-    .contact p {
-      margin-bottom: 0.5rem;
-    }
-
-    .cta {
-      text-align: center;
-      margin-top: 1rem;
-    }
-
-    .cta a {
-      background: #3c633f;
-      color: #fff;
-      padding: 0.75rem 1.5rem;
-      text-decoration: none;
-      border-radius: 5px;
-      transition: background 0.3s ease;
-    }
-
-    .cta a:hover {
-      background: #49734a;
-    }
-
+    footer { background: #2b4d30; color: #fff; text-align: center; padding: 48px 16px 70px; margin-top: 28px; font-size: 0.95rem; }
     @media (max-width: 600px) {
-      header h1 {
-        font-size: 1.5rem;
-      }
+      .hero { padding: 44px 0; }
+      .hero h1 { font-size: 1.4rem; }
     }
   </style>
 </head>
 <body>
 
+  <!-- Top bar -->
   <header>
-    <h1>Parrott's Palm and Tree Services L.L.C.</h1>
-    <p>Professional Palm Trimming & Tree Care — Mohave Valley, Arizona</p>
+    <div class="topbar container">
+      <div class="brand">Parrott's Palm and Tree Services L.L.C.</div>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#before-after">Before & After</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+
+    <!-- Hero -->
+    <div class="hero">
+      <div class="panel">
+        <h1>Palm trimming, tree care, and yard cleanups done right.</h1>
+        <p>Serving Fort Mohave, Mohave Valley, and Bullhead City, AZ.</p>
+        <a class="btn" href="mailto:parrottspalms@gmail.com?subject=Quote%20Request%20-%20Parrott%27s%20Palm%20and%20Tree%20Services&body=Hi%20Kyle%2C%0A%0AMy%20name%3A%20%0AService(s)%20needed%3A%20%0AAddress%20(city)%3A%20%0APreferred%20date%2Ftime%3A%20%0ANotes%3A%20%0A%0AYou%20can%20reach%20me%20at%3A%20%0A%0AThanks!">Get a free quote</a>
+      </div>
+    </div>
   </header>
 
-  <nav>
-    <a href="#about">About</a>
-    <a href="#services">Services</a>
-    <a href="#contact">Contact</a>
-  </nav>
-
-  <main>
+  <main class="container">
+    <!-- About -->
     <section id="about">
       <h2>About Us</h2>
-      <p>At Parrott’s Palm and Tree Services L.L.C., we specialize in palm trimming, tree care, and full yard maintenance for residential and commercial clients across Mohave Valley and surrounding areas. 
-      With a focus on safety, precision, and professionalism, we treat every property like it’s our own — keeping your palms healthy and your yard clean year-round.</p>
+      <p class="lead">
+        We specialize in palm trimming, safe tree pruning, and thorough yard cleanups. We show up on time,
+        work clean, and leave your property better than we found it.
+      </p>
+      <p>
+        Licensed and insured. Independently owned and operated by Kyle Parrott.
+      </p>
     </section>
 
+    <!-- Services -->
     <section id="services">
-      <h2>Our Services</h2>
+      <h2>Services</h2>
       <div class="services">
-        <div class="service">
-          <h3>Palm Trimming</h3>
-          <p>Specialized palm care including dead frond removal, seed pod cleanup, and seasonal maintenance to keep your trees healthy and beautiful.</p>
-        </div>
-        <div class="service">
-          <h3>Tree Trimming & Pruning</h3>
-          <p>Proper trimming techniques to enhance safety, shape, and long-term growth of your shade and ornamental trees.</p>
-        </div>
-        <div class="service">
-          <h3>Yard Cleanups</h3>
-          <p>Complete property cleanups including branch removal, weed clearing, and debris hauling. Fast, reliable, and always thorough.</p>
-        </div>
-        <div class="service">
-          <h3>Maintenance Plans</h3>
-          <p>Monthly or seasonal maintenance packages designed for property owners who want their landscape handled without the hassle.</p>
-        </div>
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1521579667847-7b30f3c59602?q=80&w=1600&auto=format&fit=crop" alt="Palm trimming work in progress">
+          <div class="pad">
+            <h3>Palm Trimming</h3>
+            <p>Seasonal trimming, seed pod removal, skirt cleanups, and hazardous frond removal.</p>
+            <ul>
+              <li>Safe climbing and cleanup</li>
+              <li>Healthy cuts for long term growth</li>
+              <li>Debris hauled off</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1557683311-eac922347aa1?q=80&w=1600&auto=format&fit=crop" alt="Tree pruning in a residential yard">
+          <div class="pad">
+            <h3>Tree Trimming & Pruning</h3>
+            <p>Structure-first pruning for shade and ornamental trees. We cut to standards, not shortcuts.</p>
+            <ul>
+              <li>Risk reduction and clearance</li>
+              <li>Crown cleaning and shaping</li>
+              <li>Storm prep and aftercare</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1599447330365-91b839f31551?q=80&w=1600&auto=format&fit=crop" alt="Yard cleanup with stacked debris">
+          <div class="pad">
+            <h3>Yard Cleanups</h3>
+            <p>One-time or recurring. Brush, weeds, and debris out. Property looking sharp.</p>
+            <ul>
+              <li>Fast turnarounds</li>
+              <li>Haul-away included options</li>
+              <li>Before and after photos</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1600&auto=format&fit=crop" alt="Calendar planning for maintenance">
+          <div class="pad">
+            <h3>Maintenance Plans</h3>
+            <p>Monthly or seasonal visits so you do not have to think about it.</p>
+            <ul>
+              <li>Set it and forget it</li>
+              <li>Seasonal palm care</li>
+              <li>Predictable pricing</li>
+            </ul>
+          </div>
+        </article>
       </div>
     </section>
 
+    <!-- Before & After -->
+    <section id="before-after">
+      <h2>Before and After</h2>
+      <div class="grid-2">
+        <figure class="figure">
+          <img src="https://images.unsplash.com/photo-1529429612777-3e0420a1b2ee?q=80&w=1600&auto=format&fit=crop" alt="Overgrown palm before trimming">
+          <figcaption>Before: heavy skirt and seed pods creating mess and hazards.</figcaption>
+        </figure>
+        <figure class="figure">
+          <img src="https://images.unsplash.com/photo-1509228468518-180dd4864904?q=80&w=1600&auto=format&fit=crop" alt="Clean palm after trimming">
+          <figcaption>After: clean crown, proper cuts, and a tidy yard.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Contact -->
     <section id="contact">
-      <h2>Contact Us</h2>
+      <h2>Contact</h2>
       <div class="contact">
         <p><strong>Owner:</strong> Kyle Parrott</p>
-        <p><strong>Phone:</strong> (928)418-6574</p>
-        <p><strong>Email:</strong> ParrottsPalms@gmail.com</p>
-        <p><strong>Service Area:</strong> Fort Mohave · Mohave Valley · Bullhead City, AZ</p>
-      </div>
-
-      <div class="cta">
-        <a href="mailto:ParrottsPalms@gmail.com">Get a Free Quote</a>
+        <p><strong>Phone:</strong> <a href="tel:+19284186574">(928) 418-6574</a></p>
+        <p><strong>Email:</strong> <a href="mailto:parrottspalms@gmail.com">parrottspalms@gmail.com</a></p>
+        <p><strong>Service Area:</strong> Fort Mohave, Mohave Valley, Bullhead City, AZ</p>
+        <div class="cta-row">
+          <a class="btn" href="mailto:parrottspalms@gmail.com?subject=Quote%20Request%20-%20Parrott%27s%20Palm%20and%20Tree%20Services&body=Hi%20Kyle%2C%0A%0AMy%20name%3A%20%0AService(s)%20needed%3A%20%0AAddress%20(city)%3A%20%0APreferred%20date%2Ftime%3A%20%0ANotes%3A%20%0A%0AYou%20can%20reach%20me%20at%3A%20%0A%0AThanks!">Email for a free quote</a>
+          <a class="btn" href="tel:+19284186574">Call now</a>
+        </div>
       </div>
     </section>
   </main>
 
+  <!-- Fixed contact bar -->
+  <div class="footbar">
+    <a href="tel:+19284186574">Call: (928) 418-6574</a>
+    <span>|</span>
+    <a href="mailto:parrottspalms@gmail.com?subject=Quote%20Request%20-%20Parrott%27s%20Palm%20and%20Tree%20Services">Email: parrottspalms@gmail.com</a>
+  </div>
+
   <footer>
-    &copy; 2025 Parrott's Palm and Tree Services L.L.C. — Independently Owned & Operated
+    Copyright 2025 Parrott's Palm and Tree Services L.L.C. - Independently Owned and Operated
   </footer>
 
 </body>
